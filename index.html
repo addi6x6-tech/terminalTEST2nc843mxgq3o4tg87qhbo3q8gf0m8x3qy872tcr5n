@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminale Płatnicze eService | Krzysztof Szczepaniak</title>
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        fintechBlue: '#1e3a8a',
-                        fintechGray: '#f8fafc',
-                        fintechAccent: '#10b981',
+                        esBlue: '#0b1e39',
+                        esBlueLight: '#122c54',
+                        esAccent: '#1bb99a',
+                        esGray: '#f7f9fc'
                     }
                 }
             }
@@ -23,164 +31,189 @@
 
     <style>
         html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
 
-<body class="bg-fintechGray text-slate-900 font-sans antialiased">
+<body class="bg-esGray text-slate-900 antialiased">
 
-<nav class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-slate-100">
+<!-- NAV -->
+<nav class="bg-white/95 backdrop-blur border-b border-slate-100 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <div class="flex items-center gap-2">
-            <i class="fas fa-credit-card text-fintechBlue text-2xl"></i>
-            <span class="text-2xl font-extrabold text-slate-950 tracking-tight">
-                Terminale<span class="text-fintechBlue font-light">eService</span>
+        <div class="flex items-center gap-3">
+            <img
+                src="https://www.eservice.pl/hubfs/raw_assets/public/isobar-eservice-theme/images/logos/eservice.svg"
+                alt="eService logo"
+                class="h-8 w-auto"
+            >
+            <span class="text-lg md:text-xl font-semibold tracking-tight text-esBlue">
+                Terminale Płatnicze
             </span>
         </div>
 
-        <div class="space-x-8 hidden md:flex items-center">
-            <a href="#oferta" class="text-slate-700 hover:text-fintechBlue font-medium">Oferta</a>
-            <a href="#branze" class="text-slate-700 hover:text-fintechBlue font-medium">Branże</a>
-            <a href="#kontakt" class="bg-fintechBlue text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-900 shadow-md">
+        <div class="hidden md:flex items-center gap-8 font-medium text-slate-700">
+            <a href="#oferta" class="hover:text-esAccent transition">Oferta</a>
+            <a href="#branze" class="hover:text-esAccent transition">Branże</a>
+            <a href="#kontakt" class="bg-esAccent text-white px-6 py-2.5 rounded-full font-semibold hover:opacity-90 transition">
                 Zamów wycenę
             </a>
         </div>
     </div>
 </nav>
 
-<header class="py-24 md:py-32 px-6 bg-gradient-to-br from-blue-950 to-indigo-950 text-white relative overflow-hidden">
+<!-- HERO -->
+<header class="bg-gradient-to-br from-esBlue via-esBlueLight to-esBlue text-white">
+    <div class="max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2 gap-16 items-center">
 
-    <div class="max-w-5xl mx-auto text-center relative z-10">
+        <!-- TEXT -->
+        <div>
+            <span class="inline-flex items-center gap-2 text-esAccent bg-esAccent/10 border border-esAccent/30 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+                Program Polska Bezgotówkowa
+            </span>
 
-        <div class="inline-flex items-center gap-2 bg-fintechAccent/20 text-fintechAccent px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border border-fintechAccent/30">
-            <i class="fas fa-star text-xs"></i>
-            Program Polska Bezgotówkowa
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-8">
+                Terminal płatniczy<br>
+                dopasowany do Twojego biznesu
+            </h1>
+
+            <p class="text-xl text-slate-200 leading-loose mb-12 max-w-xl">
+                Wdrożenie płatności bezgotówkowych bez ryzyka i zbędnych kosztów.
+                Terminale eService – <strong class="text-white">do 12 miesięcy bez prowizji i abonamentu</strong>,
+                z realnym wsparciem doradcy.
+            </p>
+
+            <div class="flex flex-wrap gap-6">
+                <a href="#kontakt" class="bg-esAccent text-white px-10 py-4 rounded-xl font-bold hover:opacity-90 transition">
+                    Odbierz terminal
+                </a>
+                <a href="#oferta" class="border border-white/30 text-white px-10 py-4 rounded-xl font-bold hover:bg-white/10 transition">
+                    Poznaj ofertę
+                </a>
+            </div>
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tighter">
-            Terminale płatnicze dopasowane do Twojego biznesu
-        </h1>
-
-        <p class="text-xl md:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto font-light leading-relaxed">
-            Pomagam firmom wdrożyć płatności bezgotówkowe w prosty i bezpieczny sposób.
-            Terminale eService – <strong class="text-white">bez abonamentu i prowizji</strong>
-            w Programie Polska Bezgotówkowa.
-        </p>
-
-        <div class="flex flex-wrap justify-center gap-6">
-            <a href="#kontakt" class="bg-white text-fintechBlue px-10 py-5 rounded-2xl font-bold text-lg shadow-xl hover:bg-slate-50">
-                Odbierz darmowy terminal
-            </a>
-            <a href="#oferta" class="border-2 border-white/30 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10">
-                Poznaj ofertę
-            </a>
+        <!-- IMAGE -->
+        <div class="relative">
+            <img
+                src="https://www.eservice.pl/hubfs/rozwi%C4%85zania%20p%C5%82atnicze%20terminale%20p%C5%82atnicze%20sekcja.png"
+                alt="Terminale płatnicze eService"
+                class="w-full max-w-lg mx-auto drop-shadow-2xl"
+            >
         </div>
     </div>
 </header>
 
-<section id="oferta" class="py-28 px-6 max-w-7xl mx-auto">
-
-    <div class="text-center mb-20">
-        <h2 class="text-sm font-bold uppercase tracking-widest text-fintechBlue mb-3">
-            Dlaczego warto
-        </h2>
-        <p class="text-4xl md:text-5xl font-extrabold text-slate-950">
-            Płatności, które pracują na Twój zysk
+<!-- OFERTA -->
+<section id="oferta" class="py-36 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-24">
+        <p class="text-sm uppercase tracking-widest text-esAccent font-bold mb-4">
+            Dlaczego eService
         </p>
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-esBlue">
+            Płatności, które realnie wspierają sprzedaż
+        </h2>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
 
-        <div class="bg-white p-9 rounded-3xl shadow border">
-            <h3 class="text-2xl font-bold mb-4">Niskie prowizje</h3>
-            <p class="text-slate-600">
-                Indywidualnie ustalane stawki. Obsługa VISA, Mastercard, BLIK (od 0,39%),
-                AmEx, JCB, UPI, Diners Club oraz kart flotowych i podarunkowych.
+        <div class="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition">
+            <i class="fas fa-percent text-esAccent text-3xl mb-6"></i>
+            <h3 class="text-xl font-bold mb-4">Niskie prowizje</h3>
+            <p class="text-slate-600 leading-loose">
+                Indywidualne stawki. Obsługa VISA, Mastercard, Maestro,
+                BLIK (od 0,39%), AmEx, JCB, UPI oraz kart flotowych.
             </p>
         </div>
 
-        <div class="bg-white p-9 rounded-3xl shadow border">
-            <h3 class="text-2xl font-bold mb-4">Pełne doradztwo</h3>
-            <p class="text-slate-600">
-                Dobór terminala, pomoc w Programie Polska Bezgotówkowa,
-                integracja z kasą fiskalną i wsparcie techniczne.
+        <div class="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition">
+            <i class="fas fa-user-tie text-esAccent text-3xl mb-6"></i>
+            <h3 class="text-xl font-bold mb-4">Opieka doradcza</h3>
+            <p class="text-slate-600 leading-loose">
+                Pełne wsparcie Krzysztofa Szczepaniaka – od umowy,
+                przez konfigurację, po codzienne użytkowanie.
             </p>
         </div>
 
-        <div class="bg-white p-9 rounded-3xl shadow border">
-            <h3 class="text-2xl font-bold mb-4">Brak abonamentu</h3>
-            <p class="text-slate-600">
-                Do 12 miesięcy bez opłat. Umowa na czas nieoznaczony.
-                Terminal może przejść na Twoją własność.
+        <div class="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition">
+            <i class="fas fa-hand-holding-dollar text-esAccent text-3xl mb-6"></i>
+            <h3 class="text-xl font-bold mb-4">Bez opłat na start</h3>
+            <p class="text-slate-600 leading-loose">
+                Program Polska Bezgotówkowa – nawet 12 miesięcy bez
+                prowizji i kosztów dzierżawy terminala.
             </p>
         </div>
 
-        <div class="bg-white p-9 rounded-3xl shadow border">
-            <h3 class="text-2xl font-bold mb-4">Nowoczesne terminale</h3>
-            <p class="text-slate-600">
+        <div class="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition">
+            <i class="fas fa-mobile-screen text-esAccent text-3xl mb-6"></i>
+            <h3 class="text-xl font-bold mb-4">Nowoczesne terminale</h3>
+            <p class="text-slate-600 leading-loose">
                 PAX, Ingenico, Verifone, Sunmi.
-                Stacjonarne, mobilne, e-terminal oraz terminal w telefonie (Android / iOS).
+                Terminal mobilny, stacjonarny, e-terminal i SoftPOS.
             </p>
         </div>
 
     </div>
 </section>
 
-<section id="branze" class="py-28 px-6 bg-slate-100">
+<!-- BRANŻE -->
+<section id="branze" class="py-36 px-6 bg-slate-100">
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
         <div>
-            <h2 class="text-sm font-bold uppercase tracking-widest text-fintechBlue mb-3">
-                Obsługiwane branże
-            </h2>
-            <p class="text-4xl font-extrabold mb-8">
+            <p class="text-sm uppercase tracking-widest text-esAccent font-bold mb-4">
+                Branże
+            </p>
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-8 text-esBlue">
                 Rozwiązania dopasowane do realiów pracy
+            </h2>
+            <p class="text-lg text-slate-700 leading-loose mb-10">
+                Gastronomia, handel, usługi, transport i rolnicy.
+                Terminale z cashbackiem, DCC, doładowaniami
+                i integracją z kasami fiskalnymi.
             </p>
-            <p class="text-lg text-slate-700 mb-10">
-                Gastronomia, handel, usługi, transport oraz rolnicy.
-                Terminale z cashbackiem, doładowaniami, DCC i integracją POS.
-            </p>
-            <a href="#kontakt" class="bg-white px-8 py-4 rounded-xl font-semibold shadow">
+            <a href="#kontakt" class="inline-block bg-esAccent text-white px-10 py-4 rounded-xl font-bold hover:opacity-90 transition">
                 Skonsultuj swoją branżę
             </a>
         </div>
 
         <div class="grid grid-cols-2 gap-6">
-            <div class="bg-white p-6 rounded-xl">Gastronomia</div>
-            <div class="bg-white p-6 rounded-xl">Detail</div>
-            <div class="bg-white p-6 rounded-xl">Usługi</div>
-            <div class="bg-white p-6 rounded-xl">Transport i rolnicy</div>
+            <div class="bg-white p-6 rounded-2xl shadow text-center font-semibold">Gastronomia</div>
+            <div class="bg-white p-6 rounded-2xl shadow text-center font-semibold">Handel detaliczny</div>
+            <div class="bg-white p-6 rounded-2xl shadow text-center font-semibold">Usługi</div>
+            <div class="bg-white p-6 rounded-2xl shadow text-center font-semibold">Transport i rolnicy</div>
         </div>
 
     </div>
 </section>
 
-<section id="kontakt" class="py-28 px-6 bg-blue-950 text-white">
+<!-- KONTAKT -->
+<section id="kontakt" class="py-36 px-6 bg-esBlue text-white">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
 
         <div>
             <h2 class="text-4xl font-extrabold mb-8">
                 Porozmawiajmy o terminalu dla Twojej firmy
             </h2>
-            <p class="text-blue-200 mb-12">
-                Sprawdzę Twoje możliwości w Programie Polska Bezgotówkowa
-                i zaproponuję najkorzystniejsze warunki.
+            <p class="text-slate-300 leading-loose mb-12">
+                Sprawdzę możliwość skorzystania z Programu Polska Bezgotówkowa
+                i zaproponuję najkorzystniejsze warunki płatności bezgotówkowych.
             </p>
 
-            <p class="text-lg mb-4"><strong>Krzysztof Szczepaniak</strong></p>
-            <p class="text-lg">📞 +48 696 409 818</p>
-            <p class="text-lg">✉️ Krzysztof.Szczepaniak@eservice.com.pl</p>
+            <p class="text-lg font-bold">Krzysztof Szczepaniak</p>
+            <p class="mt-2">📞 +48 696 409 818</p>
+            <p>✉️ Krzysztof.Szczepaniak@eservice.com.pl</p>
         </div>
 
-        <form class="bg-white p-10 rounded-3xl text-slate-900 space-y-6">
-            <h3 class="text-3xl font-bold">Zamów bezpłatną wycenę</h3>
+        <form class="bg-white p-12 rounded-3xl text-slate-900 space-y-6 shadow-2xl">
+            <h3 class="text-2xl font-bold mb-4">Bezpłatna wycena</h3>
 
             <input type="text" placeholder="Imię i nazwisko" class="w-full p-4 border rounded-xl">
             <input type="text" placeholder="Nazwa firmy" class="w-full p-4 border rounded-xl">
             <input type="tel" placeholder="Telefon" class="w-full p-4 border rounded-xl">
             <input type="email" placeholder="E-mail (opcjonalnie)" class="w-full p-4 border rounded-xl">
 
-            <button class="w-full bg-fintechAccent text-white py-5 rounded-xl font-bold">
+            <button class="w-full bg-esAccent hover:opacity-90 transition text-white font-bold py-5 rounded-xl">
                 Wyślij zgłoszenie
             </button>
         </form>
@@ -188,8 +221,9 @@
     </div>
 </section>
 
-<footer class="py-12 bg-slate-50 text-center border-t">
-    <p class="font-medium">
+<!-- FOOTER -->
+<footer class="bg-slate-50 border-t py-12 text-center">
+    <p class="font-medium text-slate-700">
         © 2024 Alibero sp. z o.o. – Terminale eService
     </p>
     <p class="text-sm text-slate-500 mt-2">
