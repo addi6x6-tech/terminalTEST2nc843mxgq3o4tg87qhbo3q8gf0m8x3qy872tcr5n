@@ -3,8 +3,19 @@
 (function () {
   'use strict';
 
+  function lpSource() {
+    var f = document.querySelector('form[action*="formspree.io"] input[name="source"]');
+    if (f && f.value) return f.value;
+    var m = document.querySelector('meta[name="kt:lp"]');
+    if (m && m.content) return m.content;
+    return 'root';
+  }
+  var LP = lpSource();
+
   function ev(name, params) {
-    try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+    var p = params || {};
+    p.source = LP;
+    try { if (typeof gtag === 'function') gtag('event', name, p); } catch (e) {}
   }
 
   (function () {
@@ -57,10 +68,7 @@
         }
       });
     }, { threshold: 0.1 }); // niski próg — sekcje wyższe niż viewport (mobile) też wyzwalają section_view
-    ['oferta', 'branze', 'kontakt'].forEach(function (id) {
-      var s = document.getElementById(id);
-      if (s) io.observe(s);
-    });
+    document.querySelectorAll('section[id], header[id]').forEach(function (s) { io.observe(s); });
   }
 
   (function () {
