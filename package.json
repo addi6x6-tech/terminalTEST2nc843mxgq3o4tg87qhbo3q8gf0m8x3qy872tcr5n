@@ -1,0 +1,16 @@
+{
+  "name": "krzysztofterminal-pl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Strona krzysztofterminal.pl — build CSS (Tailwind) i JS (esbuild, minifikacja)",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "build:js": "esbuild src/consent.js src/analytics.js --minify --outdir=assets --allow-overwrite",
+    "build": "npm run build:css && npm run build:js",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.2",
+    "tailwindcss": "^3.4.17"
+  }
+}
