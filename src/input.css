@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Style własne (przeniesione z dawnego inline <style> w index.html) */
+/* scroll-behavior obsługuje klasa .scroll-smooth na <html> */
+body { font-family: 'Inter', sans-serif; }
+
+.site-url-lockup {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: 0.14em;
+}
+.site-url-lockup .domain-tld {
+    letter-spacing: 0.06em;
+}
