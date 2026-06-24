@@ -71,7 +71,19 @@
 
         <div class="flex items-center gap-2 sm:gap-6 font-medium text-slate-700 shrink-0">
             <a href="#oferta" class="text-[11px] sm:text-sm md:text-base hover:text-esAccent transition px-1">Oferta</a>
-            <a href="#branze" class="text-[11px] sm:text-sm md:text-base hover:text-esAccent transition px-1">Branże</a>
+            <details class="relative">
+                <summary class="cursor-pointer text-[11px] sm:text-sm md:text-base hover:text-esAccent transition px-1 inline-flex items-center gap-1 select-none">
+                    Branże
+                    <span class="text-[0.6em] mt-px" aria-hidden="true">▼</span>
+                </summary>
+                <div class="absolute right-0 mt-3 w-52 bg-white rounded-2xl shadow-xl ring-1 ring-slate-200 p-2 z-50">
+                    <a href="/terminal-dla-branzy-beauty/" class="block px-4 py-2 rounded-xl text-sm font-semibold text-esBlue hover:bg-esGray transition">Salon beauty</a>
+                    <a href="/terminal-dla-kosmetyczki/" class="block px-4 py-2 rounded-xl text-sm font-semibold text-esBlue hover:bg-esGray transition">Kosmetyczka</a>
+                    <a href="/terminal-dla-fryzjera/" class="block px-4 py-2 rounded-xl text-sm font-semibold text-esBlue hover:bg-esGray transition">Fryzjer</a>
+                    <a href="/terminal-dla-barbera/" class="block px-4 py-2 rounded-xl text-sm font-semibold text-esBlue hover:bg-esGray transition">Barber</a>
+                    <a href="/terminal-dla-makijazystki/" class="block px-4 py-2 rounded-xl text-sm font-semibold text-esBlue hover:bg-esGray transition">Makijażystka</a>
+                </div>
+            </details>
             <a href="#dane-kontaktowe" class="bg-esAccent text-white px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-full text-[11px] sm:text-sm md:text-base font-bold hover:opacity-90 transition shadow-sm">
                 Kontakt
             </a>
@@ -275,17 +287,6 @@
             <a href="#dane-kontaktowe" class="inline-block bg-esAccent text-white px-10 py-4 rounded-xl font-bold hover:opacity-90 transition">
                 Zapytaj o ofertę dla swojej branży
             </a>
-
-            <div class="mt-10 pt-8 border-t border-slate-200">
-                <p class="text-sm font-bold text-esBlue mb-4">Strony dedykowane dla branży beauty:</p>
-                <div class="flex flex-wrap gap-2">
-                    <a href="/terminal-dla-branzy-beauty/" class="text-sm font-semibold text-esBlue bg-white border border-slate-200 px-4 py-2 rounded-full hover:border-esAccent hover:text-esAccent transition">Salon beauty</a>
-                    <a href="/terminal-dla-kosmetyczki/" class="text-sm font-semibold text-esBlue bg-white border border-slate-200 px-4 py-2 rounded-full hover:border-esAccent hover:text-esAccent transition">Kosmetyczka</a>
-                    <a href="/terminal-dla-fryzjera/" class="text-sm font-semibold text-esBlue bg-white border border-slate-200 px-4 py-2 rounded-full hover:border-esAccent hover:text-esAccent transition">Fryzjer</a>
-                    <a href="/terminal-dla-barbera/" class="text-sm font-semibold text-esBlue bg-white border border-slate-200 px-4 py-2 rounded-full hover:border-esAccent hover:text-esAccent transition">Barber</a>
-                    <a href="/terminal-dla-makijazystki/" class="text-sm font-semibold text-esBlue bg-white border border-slate-200 px-4 py-2 rounded-full hover:border-esAccent hover:text-esAccent transition">Makijażystka</a>
-                </div>
-            </div>
         </div>
 
         <figure class="rounded-3xl bg-white p-3 sm:p-5 shadow-lg shadow-slate-300/40 ring-1 ring-slate-200/90 overflow-hidden">
