@@ -1,0 +1,20 @@
+# KrzysztofTerminal.pl
+
+> Krzysztof Szczepaniak - autoryzowany doradca eService (Grupa PKO Banku Polskiego i Global Payments). Pomagam firmom z branży beauty w Polsce uruchomić terminal płatniczy: karty Visa i Mastercard, BLIK, Google Pay i Apple Pay, telefon jako terminal (aplikacja eService tom, Android i iPhone z Tap to Pay), Program Polska Bezgotówkowa (na start terminal bez opłat nawet przez 12 miesięcy, umowa bezterminowa). Jeden stały doradca zamiast anonimowej obsługi. Kontakt: +48 696 409 818, biuro@krzysztofterminal.pl.
+
+## Strony
+
+- [Strona główna](https://krzysztofterminal.pl/): terminale płatnicze eService dla firm - doradztwo, dobór urządzenia, pomoc we wdrożeniu
+- [Terminal dla branży beauty](https://krzysztofterminal.pl/terminal-dla-branzy-beauty/): oferta terminali płatniczych dla salonów beauty
+- [Terminal dla kosmetyczki](https://krzysztofterminal.pl/terminal-dla-kosmetyczki/): terminal płatniczy dla kosmetyczki - obowiązek płatności bezgotówkowych, cennik (0 zł przez 12 miesięcy w Programie Polska Bezgotówkowa), kasa fiskalna dla gabinetu i FAQ
+- [Terminal dla fryzjera](https://krzysztofterminal.pl/terminal-dla-fryzjera/): obowiązek płatności bezgotówkowych, koszty terminala i telefon jako terminal w salonie fryzjerskim
+- [Terminal dla barbera](https://krzysztofterminal.pl/terminal-dla-barbera/): terminal płatniczy dla barbershopu - obowiązek prawny, koszty, ulga podatkowa i telefon jako terminal (eService tom), także przy wynajmie fotela
+- [Terminal dla makijażystki](https://krzysztofterminal.pl/terminal-dla-makijazystki/): terminal mobilny i telefon jako terminal dla makijażystek
+
+## Fakty
+
+- Sam terminal płatniczy nie jest w Polsce obowiązkowy, ale przedsiębiorca prowadzący sprzedaż na kasie fiskalnej musi od 2022 roku (Polski Ład) zapewnić klientom możliwość płatności bezgotówkowej.
+- Program Polska Bezgotówkowa pozwala nowym firmom otrzymać terminal na start bez opłat nawet przez 12 miesięcy, z prowizją 0% do 100 000 zł obrotu; w ofercie eService kolejne 18 miesięcy kosztuje 1 zł miesięcznie.
+- Obowiązek integracji terminala płatniczego z kasą fiskalną online został uchylony w 2025 roku - terminal i kasa mogą działać osobno.
+- Ulga na terminal: wydatki na terminal płatniczy można odliczyć od podstawy opodatkowania (PIT/CIT) do 1000 zł rocznie, a przy zwolnieniu z kasy fiskalnej do 2500 zł rocznie.
+- Aplikacja eService tom zmienia telefon (Android 8.1+ lub iPhone XS+/iOS 17 z Tap to Pay) w terminal płatniczy; obsługuje płatności powyżej 100 zł z potwierdzeniem PIN.

@@ -3,8 +3,19 @@
 (function () {
   'use strict';
 
+  function lpSource() {
+    var f = document.querySelector('form[action*="formspree.io"] input[name="source"]');
+    if (f && f.value) return f.value;
+    var m = document.querySelector('meta[name="kt:lp"]');
+    if (m && m.content) return m.content;
+    return 'root';
+  }
+  var LP = lpSource();
+
   function ev(name, params) {
-    try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+    var p = params || {};
+    p.source = LP;
+    try { if (typeof gtag === 'function') gtag('event', name, p); } catch (e) {}
   }
 
   (function () {
@@ -57,10 +68,7 @@
         }
       });
     }, { threshold: 0.1 }); // niski próg — sekcje wyższe niż viewport (mobile) też wyzwalają section_view
-    ['oferta', 'branze', 'kontakt'].forEach(function (id) {
-      var s = document.getElementById(id);
-      if (s) io.observe(s);
-    });
+    document.querySelectorAll('section[id], header[id]').forEach(function (s) { io.observe(s); });
   }
 
   (function () {
@@ -109,7 +117,29 @@
         .then(function (r) {
           if (r.ok) {
             ev('generate_lead', { form_id: 'kontakt', value: 1, currency: 'PLN' });
-            showStatus('success', 'Dziękujemy! Wiadomość została wysłana — odezwę się wkrótce.');
+            var rewardPdf = form.getAttribute('data-reward-pdf');
+            if (rewardPdf) {
+              var dl = document.createElement('a');
+              dl.href = rewardPdf;
+              dl.setAttribute('download', '');
+              dl.rel = 'noopener';
+              document.body.appendChild(dl);
+              dl.click();
+              dl.remove();
+              ev('lead_magnet_download', { file: 'checklista-start-w-beauty' });
+              status.textContent = 'Dziękujemy! Checklista pobiera się automatycznie. Jeśli nie ruszyła - ';
+              var lnk = document.createElement('a');
+              lnk.href = rewardPdf;
+              lnk.target = '_blank';
+              lnk.rel = 'noopener';
+              lnk.className = 'underline';
+              lnk.textContent = 'pobierz ją tutaj';
+              status.appendChild(lnk);
+              status.appendChild(document.createTextNode('. Odezwę się wkrótce.'));
+              status.className = 'text-sm font-semibold text-esAccent';
+            } else {
+              showStatus('success', 'Dziękujemy! Wiadomość została wysłana - odezwę się wkrótce.');
+            }
             form.reset();
           } else {
             var msg = (r.data && r.data.errors && r.data.errors.map(function (x) { return x.message; }).join(', ')) || ('HTTP ' + r.status);
@@ -126,4 +156,16 @@
         .finally(function () { if (btn) { btn.disabled = false; btn.textContent = oldLabel; } });
     });
   }
+
+  // FAQ: deterministyczne rozwijanie (jeden klik = jeden toggle).
+  // Naprawia samozwijanie natywnego <details> przy przeliczaniu układu (siatka 2-kolumnowa).
+  document.querySelectorAll('#faq details').forEach(function (d) {
+    var s = d.querySelector('summary');
+    if (!s) return;
+    s.addEventListener('click', function (e) {
+      e.preventDefault();
+      d.open = !d.open;
+      ev('faq_toggle', { open: d.open ? 1 : 0 });
+    });
+  });
 })();

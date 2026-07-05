@@ -33,6 +33,27 @@ Podgląd CSS na żywo: `npm run watch:css`.
 - `assets/img/` — obrazy (oraz `icons/` z ikonami UI)
 - `assets/favicons/` — favicony i ikony aplikacji
 
+## Landing page per zawód (folder = czysty URL)
+
+Dedykowane LP (branża beauty) leżą w podfolderach i są serwowane pod adresem ze slugiem:
+`terminal-dla-branzy-beauty/` (hub) + `terminal-dla-kosmetyczki/`, `terminal-dla-fryzjera/`,
+`terminal-dla-barbera/`, `terminal-dla-makijazystki/` → `https://krzysztofterminal.pl/<slug>/`.
+
+**Zasady (ważne):**
+- Ścieżki do zasobów w LP są **absolutne** (`/dist/styles.css`, `/assets/...`) — względne dałyby 404 w podfolderze.
+- Każda LP ma własne: `<title>`, `meta description`, `canonical`, OG, `meta name="kt:lp"` oraz JSON-LD
+  (`Service`, `FAQPage`, `HowTo`).
+- Atrybucja leadu: ukryte pole `<input name="source" value="<slug>">` w formularzu — `assets/analytics.js`
+  dokleja `source` do `generate_lead` i pozostałych zdarzeń (w GA4 filtrujesz leady per LP).
+
+**Jak dodać nową LP:**
+1. Skopiuj istniejący folder, np. `terminal-dla-kosmetyczki/` → `terminal-dla-<nowy-slug>/`.
+2. W `index.html` zmień: `<title>`, `meta description`, `canonical`, OG, `meta name="kt:lp"`, treść
+   (H1, sekcje, FAQ), `_subject` formularza oraz `value` ukrytego pola `source` (= slug).
+3. Dopisz URL do `sitemap.xml`.
+4. `npm run build` (Tailwind skanuje `./*/index.html` → klasy nowej LP trafią do `dist/styles.css`).
+5. Zacommituj nowe pliki **oraz** przebudowane `dist/styles.css`.
+
 ## Analityka (GA4)
 Identyfikator pomiaru ustawiony w `index.html` (`GA_MEASUREMENT_ID`). GA4 działa zgodnie
 z Google Consent Mode v2 — dane zbierane dopiero po zgodzie w banerze cookie.

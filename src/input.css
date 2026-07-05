@@ -13,3 +13,7 @@ body { font-family: 'Inter', sans-serif; }
 .site-url-lockup .domain-tld {
     letter-spacing: 0.06em;
 }
+
+/* Akordeon FAQ (<details>) — bez domyślnego trójkąta */
+summary { list-style: none; }
+summary::-webkit-details-marker { display: none; }
